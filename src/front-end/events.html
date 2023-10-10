@@ -38,7 +38,7 @@
         }
 
         $('.simular').on('click', () => {
-            
+
             var dadosSimulacao = {}
             var qtdes = []
             var datas = []
@@ -64,9 +64,26 @@
 
             dadosSimulacao.fatorQtde = qtdes
             dadosSimulacao.fatorDatas = datas
-
+            
             google.script.run.withSuccessHandler((result) => {
-                
+                console.log(result)
+                result.forEach(row => {
+                    $('.tbody_simulate').append(`
+                        <tr>
+                            <td>${row[0]}</td>
+                            <td>${row[1]}</td>
+                            <td>${row[2]}</td>
+                            <td>${row[3]}</td>
+                            <td>${row[4]}</td>
+                            <td>${row[5]}</td>
+                            <td>${row[6]}</td>
+                        </tr>
+                    
+                    `)
+                    
+                })
+
+
             }).withFailureHandler((e) => {
                 
             }).inserirDadosSimulacao(dadosSimulacao)
