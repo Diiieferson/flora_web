@@ -1,0 +1,79 @@
+<script>
+    $(document).ready(function() {
+        initialization()
+        $('.pages').hide()
+
+        listeners()
+    });
+
+    var initialization = () => {
+        $('.sidenav').sidenav()
+        $('.collapsible').collapsible()
+        $('select').formSelect()
+        $('.datepicker').datepicker({
+            format: 'dd/mm/yyyy',
+            formatSubmit: 'dd/mm/yyyy',
+            autoClose: true,
+            firstDay: 1
+        })
+        $('input.autocomplete').autocomplete({
+            data: {
+                "Apple": null,
+                "Microsoft": null,
+                "Google": null
+            }
+        });
+    }
+
+    var listeners = () => {
+
+        
+        $('.open-simulador').on('click', () => {
+            renderPages('simulador')
+        })
+
+        var renderPages = (page) => {
+            $('.pages').hide()
+            $(`.${page}`).show()
+        }
+
+        $('.simular').on('click', () => {
+            
+            var dadosSimulacao = {}
+            var qtdes = []
+            var datas = []
+
+            dadosSimulacao.cultivar = $("#cultivar").val()
+            dadosSimulacao.produtor = $("#produtor").val()
+            dadosSimulacao.familia = $("#familia").val()
+            dadosSimulacao.data = $("#data_inicial").val()
+            dadosSimulacao.qtde = $("#quantidade").val()
+            dadosSimulacao.lote = $("#lote").val()
+            dadosSimulacao.repique =$("#repique option:selected").text()
+            
+
+            $(".fator_qtde input").each(function() {
+                qtdes.push($(this).val())
+            })
+
+
+            
+            $(".fator_data input").each(function() {
+                datas.push($(this).val())
+            })
+
+            dadosSimulacao.fatorQtde = qtdes
+            dadosSimulacao.fatorDatas = datas
+
+            google.script.run.withSuccessHandler((result) => {
+                
+            }).withFailureHandler((e) => {
+                
+            }).inserirDadosSimulacao(dadosSimulacao)
+            
+        })
+        
+    }
+
+
+</script>

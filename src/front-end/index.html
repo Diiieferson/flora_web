@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <?!= include("src/front-end/index-css.html") ?>
+
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper ">
+            <ul id="nav-mobile" class="right  hide-on-med-and-down">
+                <li><a class="blue-grey-text text-darken-4 open-simulador" href="#!">Simulador</a></li>
+                <li><a class="blue-grey-text text-darken-4" href="#!">Lançamento</a></li>
+                <li><a class="blue-grey-text text-darken-4" href="#!">Fator</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="pages simulador">
+                    <div class="card">
+                        <div class="card-content">
+
+                            
+                            <ul class="collapsible">
+                                <li>
+                                    <div class="collapsible-header">Dados da Simulação</div>
+                                    <div class="collapsible-body">
+                                        <div class="row">
+                                            <form class="col s12">
+                                                <div class="row dados_simulacao">
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">person_outline</i>
+                                                        <input id="cultivar" type="text" class="autocomplete validate">
+                                                        <label for="cultivar">Cultivar</label>
+                                                    </div>
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">person_pin</i>
+                                                        <input id="produtor" type="text" class="validate">
+                                                        <label for="produtor">Produtor/Cliente</label>
+                                                    </div>
+                                                    <div class="input-field col s4">
+                                                        <i class="material-icons prefix">people</i>
+                                                        <input id="familia" type="text" class="validate">
+                                                        <label for="familia">Família</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <i class="material-icons prefix">date_range</i>
+                                                        <input id="data_inicial" type="text" class="datepicker validate">
+                                                        <label for="data_inicial">Data Inicial</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <i class="material-icons prefix">filter_1</i>
+                                                        <input id="quantidade" type="number" class="validate">
+                                                        <label for="quantidade">Qtde</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <i class="material-icons prefix">folder_open</i>
+                                                        <input id="lote" type="text" class="validate">
+                                                        <label for="lote">Lote</label>
+                                                    </div>
+                                                    <div class="input-field col s3">
+                                                        <i class="material-icons prefix">format_list_numbered</i>
+                                                        <select id="repique">
+                                                        <option value="" disabled selected>Repique</option>
+                                                        <option value="1">Inicial</option>
+                                                        <option value="2">R1</option>
+                                                        <option value="3">R2</option>
+                                                        <option value="3">R3</option>
+                                                        <option value="3">R4</option>
+                                                        <option value="3">R5</option>
+                                                        <option value="3">Final</option>
+                                                        </select>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                                        
+                                </li>
+                                <li>
+                                    <div class="collapsible-header">Fator quantidade</div>
+                                    <div class="collapsible-body">
+                                        <div class="row fator_qtde">
+                                            <div class="input-field col s1">
+                                                <input id="fqtde_inicial" type="number" class="validate">
+                                                <label for="fqtde_inicial">Inicial</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fqtde_r1" type="number" class="validate">
+                                                <label for="fqtde_r1">R1</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fqtde_r2" type="number" class="validate">
+                                                <label for="fqtde_r2">R2</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fqtde_r3" type="number" class="validate">
+                                                <label for="fqtde_r3">R3</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fqtde_r4" type="number" class="validate">
+                                                <label for="fqtde_r4">R4</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fqtde_r5" type="number" class="validate">
+                                                <label for="fqtde_r5">R5</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="collapsible-header">Fator data</div>
+                                    <div class="collapsible-body">
+                                        <div class="row fator_data">
+                                            <div class="input-field col s1">
+                                                <input id="fdata_inicial" type="number" class="validate">
+                                                <label for="fdata_inicial">Inicial</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fdata_r1" type="number" class="validate">
+                                                <label for="fdata_r1">R1</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fdata_r2" type="number" class="validate">
+                                                <label for="fdata_r2">R2</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fdata_r3" type="number" class="validate">
+                                                <label for="fdata_r3">R3</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fdata_r4" type="number" class="validate">
+                                                <label for="fdata_r4">R4</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fdata_r5" type="number" class="validate">
+                                                <label for="fdata_r5">R5</label>
+                                            </div>
+                                            <div class="input-field col s1">
+                                                <input id="fdata_final" type="number" class="validate">
+                                                <label for="fdata_final">Final</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn-small simular">Simular</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <?!= include("src/front-end/events.html") ?>
+</body>
+</html>
