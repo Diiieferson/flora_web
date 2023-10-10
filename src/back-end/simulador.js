@@ -4,7 +4,7 @@ var inserirDadosSimulacao = (dados) => {
     var somafatorData = dados.fatorDatas.map((v) => {
         soma =+ v
     })
-    Logger.log(inserirDadosSimulacao)
+    
     Logger.log(soma)
 
     WS_SIMULADOR.appendRow(dados)
